@@ -1,0 +1,30 @@
+{
+  "name": "parky",
+  "version": "0.0.0",
+  "description": "Re-mapping object keys to new names",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/knownasilya/parky.git"
+  },
+  "keywords": [
+    "object",
+    "keys",
+    "remapping",
+    "map",
+    "rename"
+  ],
+  "author": "Ilya Radchenko <ilya@burstcreations.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knownasilya/parky/issues"
+  },
+  "homepage": "https://github.com/knownasilya/parky",
+  "devDependencies": {
+    "tap-spec": "^1.0.1",
+    "tape": "^3.0.2"
+  }
+}
