@@ -9,7 +9,7 @@ module.exports = function (data, mapping, throwOnInvalid) {
         throw new Error('Invalid key mapping specified');
       }
   
-      if (newKey !== key && original.hasOwnProperty(key)) {
+      if (newKey !== key && isValidKey(newKey) && original.hasOwnProperty(key)) {
         original[newKey] = original[key];
         delete original[key];
       }
