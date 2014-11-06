@@ -13,4 +13,5 @@ test('works', function (t) {
 
   t.ok(result.user_name, 'has property');
   t.equals(result.user_name, 'bob', 'property has same value');
+  t.end();
 });
