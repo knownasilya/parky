@@ -1,4 +1,4 @@
-parky
+parky [![Build Status][travis-badge]][travis-badge-url]
 =====
 
 Re-mapping object keys to new names
@@ -35,3 +35,6 @@ parky(user, { contactName: undefined }, true);
 ```js
 npm test
 ```
+
+[travis-badge-url]: https://travis-ci.org/knownasilya/parky
+[travis-badge]: https://travis-ci.org/knownasilya/parky.svg?branch=master
