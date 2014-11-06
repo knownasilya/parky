@@ -1,13 +1,15 @@
 'use strict';
 
-module.exports = function (data, mapping) {
+module.exports = function (data, mapping, throwOnInvalid) {
   if (mapping && typeof mapping === 'object') {
     data = Object.keys(mapping).reduce(function (original, key) {
-      var newKey;
+      var newKey = mapping[key];
 
-      if (original.hasOwnProperty(key)) {
-        newKey = mapping[key];
-
+      if (throwOnInvalid && !isValidKey(newKey)) {
+        throw new Error('Invalid key mapping specified');
+      }
+  
+      if (newKey !== key && original.hasOwnProperty(key)) {
         original[newKey] = original[key];
         delete original[key];
       }
@@ -18,3 +20,7 @@ module.exports = function (data, mapping) {
 
   return data;
 };
+
+function isValidKey(key) {
+  return key && typeof key === 'string' || typeof key === 'number';
+}

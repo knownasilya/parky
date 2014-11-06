@@ -21,6 +21,15 @@ console.log(result);
 // { user_name: 'bob', email: 'bob@gmail.com' }
 ```
 
+You can optionally pass a third parameter, a boolean, specifying
+if you want it to throw an error if a mapping is invalid. Otherwise, the
+default behavior is to ignore invalid key mappings.
+
+```js
+parky(user, { contactName: undefined }, true);
+// Throws an error
+```
+
 ## Test
 
 ```js
