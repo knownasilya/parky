@@ -3,6 +3,8 @@ parky [![Build Status][travis-badge]][travis-badge-url]
 
 Re-mapping object keys to new names
 
+[![NPM][npm-badge]][npm-badge-url]
+
 ## Usage
 
 Install with `npm install --save parky`.
@@ -38,3 +40,5 @@ npm test
 
 [travis-badge-url]: https://travis-ci.org/knownasilya/parky
 [travis-badge]: https://travis-ci.org/knownasilya/parky.svg?branch=master
+[npm-badge-url]: https://nodei.co/npm/parky/
+[npm-badge]: https://nodei.co/npm/parky.png?downloads=true&stars=true
