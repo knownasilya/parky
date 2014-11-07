@@ -32,6 +32,27 @@ parky(user, { contactName: undefined }, true);
 // Throws an error
 ```
 
+### Constructor Usage
+
+```js
+var user = { username: 'dragonx', email: 'd@x.com' };
+var parky = new Parky({
+  keyMap: {
+    username: 'user_name'
+  },
+  reuseObject: true,
+  throwOnInvalid: true
+});
+
+var result = parky.map(user);
+// { user_name: '..', email: '..' }
+
+var alternate = parky.map(user, {
+  email: 'user_email'
+});
+// { user_name: '..', user_email: '..' }
+```
+
 ## Test
 
 ```js
