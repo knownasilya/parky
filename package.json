@@ -26,5 +26,8 @@
   "devDependencies": {
     "tap-spec": "^1.0.1",
     "tape": "^3.0.2"
+  },
+  "dependencies": {
+    "extend": "^2.0.0"
   }
 }
