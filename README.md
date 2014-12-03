@@ -53,6 +53,57 @@ var alternate = parky.map(user, {
 // { user_name: '..', user_email: '..' }
 ```
 
+## Methods
+
+### `map`
+
+```js
+parky.map(data, map)
+```
+
+### `reverseMap`
+
+```js
+parky.reverseMap(data, reverseMap)
+```
+
+The second argument, `reverseMap`, is optional if you have a `keyMap` specified in the constructor.
+The reverseMap should be defined in reverse, so key = current property name, value = desired property name,
+while the `keyMap` is defined normally, and is reversed for you. These two are merged if they are both defined.
+
+#### Example
+
+```js
+var parky = new Parky({
+  keyMap: {
+    lastModified: 'last_modified'
+  }
+});
+var postRaw = {
+  title: 'Hello',
+  last_modified: 'today'
+};
+
+var normalized = parky.reverseMap(postRaw);
+
+//  value of `normalized`
+//  
+//  {
+//    title: 'Hello',
+//    lastModified: 'today'
+//  }
+
+
+var raw = parky.map(normalized);
+
+//  value of `raw`
+//
+//  {
+//    title: 'Hello',
+//    last_modified: 'today'
+//  }
+```
+
 ## Test
 
 ```js
