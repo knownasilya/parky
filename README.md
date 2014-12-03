@@ -61,6 +61,10 @@ var alternate = parky.map(user, {
 parky.map(data, map)
 ```
 
+The second argument, `map`, is optional if you have a `keyMap` specified in the constructor.
+The `keyMap` and this `map` are merged if both exist, with `map` taking precedence.
+
+
 ### `reverseMap`
 
 ```js
@@ -87,7 +91,7 @@ var postRaw = {
 var normalized = parky.reverseMap(postRaw);
 
 //  value of `normalized`
-//  
+//
 //  {
 //    title: 'Hello',
 //    lastModified: 'today'
