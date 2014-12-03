@@ -1,6 +1,6 @@
 {
   "name": "parky",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Re-mapping object keys to new names",
   "main": "lib/index.js",
   "scripts": {
