@@ -1,10 +1,10 @@
 'use strict';
 
 var test = require('tape');
-var app = require('../');
+var App = require('../lib');
 
 test('valid inputs make valid output', function (t) {
-  var result = app({
+  var result = App({
     username: 'bob',
     email: 'bob@gmail.com'
   }, {
@@ -21,7 +21,7 @@ test('same mapping as key', function (t) {
     username: 'bob',
     email: 'bob@gmail.com'
   };
-  var result = app(user, {
+  var result = App(user, {
     username: 'username'
   });
 
@@ -36,7 +36,7 @@ test('invalid mappings - empty string', function (t) {
     email: 'bob@gmail.com',
     name: 'Bob'
   };
-  var result = app(user, {
+  var result = App(user, {
     username: '',
     email: [],
     name: undefined
@@ -57,9 +57,26 @@ test('invalid mappings throw', function (t) {
   };
 
   t.throws(function () {
-    app(user, mapping, true);
+    App(user, mapping, true);
   }, /Invalid key mapping/, 'Throws exception if boolean set');
   t.end();
 });
 
+test('reverseMap works', function (t) {
+  var tester = {
+    root_url: 'blah',
+    user_email: 'hello@blah'
+  };
+  var app = new App({
+    keyMap: {
+      baseUrl: 'root_url',
+      email: 'user_email'
+    }
+  });
 
+  t.same(app.reverseMap(tester),  {
+    baseUrl: 'blah',
+    email: 'hello@blah'
+  }, 'reverse keys/values');
+  t.end();
+});
